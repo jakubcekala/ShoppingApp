@@ -84,6 +84,13 @@ dependencies {
     // Data Store
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
+    // Kakaocup
+    androidTestImplementation 'io.github.kakaocup:kakao:3.5.1'
+
+    //Kaspresso
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.4.0'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.1'
+
     // Lifecycle and Coroutines
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
