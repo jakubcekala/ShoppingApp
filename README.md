@@ -1,10 +1,8 @@
-# Shopping App
+The purpose of this repository is to use Shopping app implemented in https://github.com/mrnirva/ShoppingApp to create a testing framework based on Espresso and KakaoCup frameworks.
 
-![Android Studio](https://img.shields.io/badge/android-studio.svg)
-[![License](https://badgen.net/badge/License/Apache/blue/)](https://opensource.org/licenses/MIT)
-![MinAPI](https://badgen.net/badge/MinAPI/21/)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.7.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
-[![Gradle](https://img.shields.io/badge/gradle-7.3.3-blue.svg?)](https://gradle.org/)
+Original app description:
+
+# Shopping App
 
 <p align="left">
 <img width="180" height="400" src="ShoppingApp/gifs/1.gif">
