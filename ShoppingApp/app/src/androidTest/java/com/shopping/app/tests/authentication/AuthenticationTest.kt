@@ -20,6 +20,7 @@ class AuthenticationTest : BaseTest() {
         step("Verify authentication screen content - Sign up tab") {
             AuthenticationScreen {
                 changeTab(AuthenticationTab.SIGN_UP)
+                //verifyCommonScreenElements()
                 verifySingUpScreenElements()
             }
         }
