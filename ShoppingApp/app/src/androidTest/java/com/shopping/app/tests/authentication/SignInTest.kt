@@ -4,16 +4,16 @@ import androidx.test.filters.LargeTest
 import com.shopping.app.common.AndroidDialog
 import com.shopping.app.common.authentication.AuthenticationScreen
 import com.shopping.app.common.products.ProductsScreen
+import com.shopping.app.data.authentication.AuthenticationData_IncorrectEmail
+import com.shopping.app.data.authentication.AuthenticationData_TooShortPassword
 import com.shopping.app.data.authentication.AuthenticationTab
 import com.shopping.app.data.authentication.SignInData_Correct
 import com.shopping.app.data.authentication.SignInData_Incorrect
-import com.shopping.app.data.authentication.SignInData_IncorrectEmail
-import com.shopping.app.data.authentication.SignInData_TooShortPassword
 import com.shopping.app.tests.BaseTest
 import org.junit.Test
 
 @LargeTest
-class AuthenticationTest : BaseTest() {
+class SignInTest : BaseTest() {
 
     @Test
     fun verifyAuthenticationScreenContent() = run {
@@ -37,54 +37,39 @@ class AuthenticationTest : BaseTest() {
             AuthenticationScreen {
                 authenticate("", "")
             }
-            AndroidDialog {
-                verifyDialogMessage("Fields cannot be empty!")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyEmptyFieldError()
         }
         step("Verify error message when there is only email: ${SignInData_Correct.email} and no password entered") {
             AuthenticationScreen {
                 authenticate(SignInData_Correct.email, "")
             }
-            AndroidDialog {
-                verifyDialogMessage("Fields cannot be empty!")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyEmptyFieldError()
         }
         step("Verify error message when there is no email and only password: ${SignInData_Correct.password} entered") {
             AuthenticationScreen {
                 authenticate("", SignInData_Correct.password)
             }
-            AndroidDialog {
-                verifyDialogMessage("Fields cannot be empty!")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyEmptyFieldError()
         }
     }
 
     @Test
     fun verifyInvalidEmailError() = run {
-        step("Verify error message when there is email with incorrect format: ${SignInData_IncorrectEmail.email}") {
+        step("Verify error message when there is email with incorrect format: ${AuthenticationData_IncorrectEmail.email}") {
             AuthenticationScreen {
-                authenticate(SignInData_IncorrectEmail.email, SignInData_IncorrectEmail.password)
+                authenticate(AuthenticationData_IncorrectEmail.email, AuthenticationData_IncorrectEmail.password)
             }
-            AndroidDialog {
-                verifyDialogMessage("Please enter a valid email address!")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyInvalidEmailError()
         }
     }
 
     @Test
     fun verifyTooShortPasswordError() = run {
-        step("Verify error message when there is too short password: ${SignInData_TooShortPassword.password}") {
+        step("Verify error message when there is too short password: ${AuthenticationData_TooShortPassword.password}") {
             AuthenticationScreen {
-                authenticate(SignInData_TooShortPassword.email, SignInData_TooShortPassword.password)
+                authenticate(AuthenticationData_TooShortPassword.email, AuthenticationData_TooShortPassword.password)
             }
-            AndroidDialog {
-                verifyDialogMessage("Password must be greater than 5 characters!")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyShortPasswordError()
         }
     }
 
@@ -94,10 +79,7 @@ class AuthenticationTest : BaseTest() {
             AuthenticationScreen {
                 authenticate(SignInData_Incorrect.email, SignInData_Incorrect.password)
             }
-            AndroidDialog {
-                verifyDialogMessage("The password is invalid or the user does not have a password.")
-                clickCloseButton()
-            }
+            AndroidDialog.verifyInvalidCredentialsError()
         }
     }
 
