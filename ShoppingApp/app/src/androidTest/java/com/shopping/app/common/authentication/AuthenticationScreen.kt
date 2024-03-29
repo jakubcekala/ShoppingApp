@@ -70,8 +70,8 @@ object AuthenticationScreen : Screen<AuthenticationScreen>() {
     }
 
     fun authenticate(email: String, password: String) {
-        emailTextField.typeText(email)
-        passwordTextField.typeText(password)
+        emailTextField.replaceText(email)
+        passwordTextField.replaceText(password)
         signInBtn.click()
     }
 
