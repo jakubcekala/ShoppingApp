@@ -1,14 +1,30 @@
 package com.shopping.app.data.authentication
 
-object SignInData {
+object SignInData_Correct {
     const val email = "test@gmail.com"
     const val password = "123456"
 }
 
+object SignInData_Incorrect {
+    const val email = "test@gmail.com"
+    const val password = "123465"
+}
+
+object AuthenticationData_IncorrectEmail {
+    const val email = "test"
+    const val password = "123456"
+}
+
+object AuthenticationData_TooShortPassword {
+    const val username = "test"
+    const val email = "test@gmail.com"
+    const val password = "1234"
+}
+
 object SignUpData {
-    const val username = ""
-    const val email = ""
-    const val password = ""
+    var username = "test${System.currentTimeMillis()}"
+    const val email = "test@gmail.com"
+    const val password = "123456"
 }
 
 enum class AuthenticationTab {

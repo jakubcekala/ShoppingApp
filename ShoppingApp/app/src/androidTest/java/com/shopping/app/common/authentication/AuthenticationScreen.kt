@@ -70,15 +70,29 @@ object AuthenticationScreen : Screen<AuthenticationScreen>() {
     }
 
     fun authenticate(email: String, password: String) {
-        emailTextField.typeText(email)
-        passwordTextField.typeText(password)
+        emailTextField.replaceText(email)
+        passwordTextField.replaceText(password)
         signInBtn.click()
+    }
+
+    fun enrollUser(username: String, email: String, password: String, passwordAgain: String = password) {
+        usernameTextField.replaceText(username)
+        emailTextField.replaceText(email)
+        passwordTextField.replaceText(password)
+        passwordAgainTextField.replaceText(passwordAgain)
+        signUpBtn.click()
     }
 
     fun changeTab(tab: AuthenticationTab) {
         when(tab) {
-            AuthenticationTab.SIGN_IN -> tabLayout.selectTab(0)
-            AuthenticationTab.SIGN_UP -> tabLayout.selectTab(1)
+            AuthenticationTab.SIGN_IN -> {
+                tabLayout.selectTab(0)
+                signInBtn.isCompletelyDisplayed()
+            }
+            AuthenticationTab.SIGN_UP -> {
+                tabLayout.selectTab(1)
+                signUpBtn.isCompletelyDisplayed()
+            }
         }
     }
 }
