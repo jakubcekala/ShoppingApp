@@ -3,6 +3,7 @@ package com.shopping.app.tests.authentication
 import androidx.test.filters.LargeTest
 import com.shopping.app.common.AndroidDialog
 import com.shopping.app.common.authentication.AuthenticationScreen
+import com.shopping.app.common.products.ProductsScreen
 import com.shopping.app.data.authentication.AuthenticationTab
 import com.shopping.app.data.authentication.SignInData_Correct
 import com.shopping.app.data.authentication.SignInData_Incorrect
@@ -97,6 +98,18 @@ class AuthenticationTest : BaseTest() {
                 verifyDialogMessage("The password is invalid or the user does not have a password.")
                 clickCloseButton()
             }
+        }
+    }
+
+    @Test
+    fun successfulSignIn() = run {
+        step("User successfully sign in using email: ${SignInData_Correct.email} and password: ${SignInData_Correct.password}") {
+            AuthenticationScreen {
+                authenticate(SignInData_Correct.email, SignInData_Correct.password)
+            }
+        }
+        step("Check if products screen is visible") {
+            ProductsScreen.checkScreenTitle()
         }
     }
 }
