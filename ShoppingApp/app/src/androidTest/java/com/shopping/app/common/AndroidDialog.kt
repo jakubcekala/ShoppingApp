@@ -50,4 +50,14 @@ object AndroidDialog : Screen<AndroidDialog>() {
         verifyDialogMessage("The password is invalid or the user does not have a password.")
         clickCloseButton()
     }
+
+    fun verifyEmailAlreadyUsedError() {
+        verifyDialogMessage("The email address is already in use by another account.")
+        clickCloseButton()
+    }
+
+    fun verifyPasswordDoNotMatchError() {
+        verifyDialogMessage(R.string.passwords_dont_match)
+        clickCloseButton()
+    }
 }
