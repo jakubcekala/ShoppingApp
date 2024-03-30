@@ -23,7 +23,7 @@ object AuthenticationData_TooShortPassword {
 
 object SignUpData {
     var username = "test${System.currentTimeMillis()}"
-    const val email = "test@gmail.com"
+    var email = "test${System.currentTimeMillis()}@gmail.com"
     const val password = "123456"
 }
 
