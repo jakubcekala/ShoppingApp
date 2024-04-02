@@ -18,7 +18,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        cache: gradle
 
     - name: Run UI tests
       uses: ReactiveCircus/android-emulator-runner@v2.30.1
