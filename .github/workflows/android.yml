@@ -12,7 +12,7 @@ jobs:
     runs-on: macos-latest
     defaults:
       run:
-        working-directory: ./ShoppingApp
+        working-directory: ShoppingApp/
 
     steps:
     - name: Checkout
