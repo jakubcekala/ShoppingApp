@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
+        distribution: 'temurin'
 
     - name: Run UI Regression Tests
       uses: vgaidarji/android-github-actions-emulator@v1.0.1
