@@ -21,10 +21,10 @@ jobs:
         cache: gradle
 
     - name: Run UI tests
-      uses: vgaidarji/android-github-actions-emulator@v1.0.1
+      uses: ReactiveCircus/android-emulator-runner@v2.30.1
       with:
           api-level: 33
           target: default
           arch: arm64-v8a
           profile: Pixel 7
-          run: ./gradlew -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression connectedAndroidTest
+          script: ./gradlew -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression connectedAndroidTest
