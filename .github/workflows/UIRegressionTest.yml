@@ -20,9 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
+    - name: Run UI tests
       uses: vgaidarji/android-github-actions-emulator@v1.0.1
       with:
           api-level: 33
