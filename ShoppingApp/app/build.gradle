@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.kaspersky.kaspresso.runner.KaspressoRunner"
     }
 
     buildFeatures {
@@ -89,7 +89,7 @@ dependencies {
 
     //Kaspresso
     androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.4.0'
-    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.1'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso-allure-support:1.5.1'
 
     // Lifecycle and Coroutines
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
