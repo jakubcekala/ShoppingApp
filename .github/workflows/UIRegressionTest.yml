@@ -22,8 +22,4 @@ jobs:
     - name: Run UI Regression Tests
       uses: vgaidarji/android-github-actions-emulator@v1.0.1
       with:
-          api-level: 33
-          target: default
-          arch: x86_64
-          profile: Pixel 7
-          run: ./gradlew -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression connectedAndroidTest
+          script: ./gradlew -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression connectedAndroidTest
