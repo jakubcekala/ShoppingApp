@@ -26,5 +26,5 @@ jobs:
           api-level: 33
           target: default
           arch: x86_64
-          profile: Pixel 7
+          profile: Nexus 6
           script: ./gradlew -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression connectedAndroidTest
