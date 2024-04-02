@@ -25,8 +25,10 @@ jobs:
         distribution: 'temurin'
         cache: gradle
         
-    - name: Gradle cache
+    - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
+      with:
+        gradle-version: 8.5
 
     - name: Run UI tests
       uses: ReactiveCircus/android-emulator-runner@v2.30.1
