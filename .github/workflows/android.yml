@@ -29,3 +29,4 @@ jobs:
         arch: x86_64
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
         avd-name: Nexus 5
+        script: ./gradlew connectedAndroidTest
