@@ -33,4 +33,4 @@ jobs:
         api-level: 33
         arch: x86_64
         profile: Nexus 6
-        script: gradle connectedAndroidTest
+        script: ./gradlew connectedAndroidTest
