@@ -33,7 +33,7 @@ jobs:
       uses: ReactiveCircus/android-emulator-runner@v2.30.1
       with:
         working-directory: ShoppingApp/
-        api-level: 33
+        api-level: 30
         arch: x86_64
         disable-animations: true
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
