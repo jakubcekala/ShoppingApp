@@ -38,11 +38,9 @@ jobs:
         disable-animations: true
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
         ram-size: 4096M
-        script: ./gradlew connectedAndroidTest
-
-    - name: Pull allure report from Emulator
-      if: always()
-      run: adb pull /sdcard/Documents/allure-results
+        script: |
+          ./gradlew connectedAndroidTest
+          adb pull /sdcard/Documents/allure-results
         
     - name: Load test report history
       uses: actions/checkout@v3
