@@ -41,6 +41,7 @@ jobs:
         script: ./gradlew connectedAndroidTest
 
     - name: Pull allure report from Emulator
+      if: always()
       run: adb pull /sdcard/Documents/allure-results
         
     - name: Load test report history
