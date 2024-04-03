@@ -29,9 +29,6 @@ jobs:
     - name: Grant execute permissions for gradlew
       run: chmod +x ./gradlew
 
-    - name: Check adb command
-      run: adb devices
-
     - name: Run UI tests
       uses: ReactiveCircus/android-emulator-runner@v2.30.1
       with:
@@ -42,6 +39,9 @@ jobs:
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
         ram-size: 4096M
         script: ./gradlew connectedAndroidTest
+
+    - name: Pull allure report from Emulator
+      run: adb pull /sdcard/Documents/allure-results
         
     - name: Load test report history
       uses: actions/checkout@v3
@@ -57,12 +57,12 @@ jobs:
       with:
         gh_pages: gh-pages
         allure_history: allure-history
-        allure_results: build/allure-results
+        allure_results: /sdcard/Documents/allure-results
 
-    - name: Publish test report
-      uses: peaceiris/actions-gh-pages@v3
-      if: always()
-      with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_branch: gh-pages
-         publish_dir: allure-history
+    # - name: Publish test report
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   if: always()
+    #   with:
+    #      github_token: ${{ secrets.GITHUB_TOKEN }}
+    #      publish_branch: gh-pages
+    #      publish_dir: allure-history
