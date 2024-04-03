@@ -1,4 +1,4 @@
-name: Android CI
+name: Regression test
 
 on:
   push:
@@ -14,6 +14,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+    - name: Set up JDK 11 and Cache Gradle
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+        cache: 'gradle'
+
+    - name: Grant execute permissions for gradlew
+      run: chmod +x ./gradlew
 
     - name: Run UI tests
       uses: ReactiveCircus/android-emulator-runner@v2.30.1
