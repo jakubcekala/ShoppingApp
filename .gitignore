@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!ShoppingApp/gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
