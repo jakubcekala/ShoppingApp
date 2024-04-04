@@ -34,7 +34,7 @@ jobs:
       if: always()
       with:
         working-directory: ShoppingApp/
-        api-level: 33
+        api-level: 32
         arch: x86_64
         disable-animations: true
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
