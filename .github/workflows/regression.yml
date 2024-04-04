@@ -47,6 +47,14 @@ jobs:
       with:
         name: ui_tests_results
         path: ShoppingApp/app/build/reports/androidTests/connected
+
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always() 
+      with:
+         name: Test results          # Name of the check run which will be created
+         path: ShoppingApp/app/build/outputs/androidTest-results/connected/*.xml    # Path to test results
+         reporter: jest-junit  
         
     # - name: Load test report history
     #   uses: actions/checkout@v3
