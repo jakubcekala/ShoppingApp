@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: ui_tests_results
-        path: ShoppingApp/ShoppingApp/build/reports/androidTests/connected
+        path: ShoppingApp/build/reports/androidTests/connected
         
     # - name: Load test report history
     #   uses: actions/checkout@v3
