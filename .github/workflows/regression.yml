@@ -40,6 +40,13 @@ jobs:
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
         ram-size: 4096M
         script: ./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression
+
+    - name: Upload jUnit report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: ui_tests_results
+        path: us-app-ui-tests/build/reports/androidTests/connected
         
     # - name: Load test report history
     #   uses: actions/checkout@v3
