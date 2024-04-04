@@ -54,7 +54,7 @@ jobs:
       with:
          name: Test results          # Name of the check run which will be created
          path: ShoppingApp/app/build/outputs/androidTest-results/connected/*.xml    # Path to test results
-         reporter: jest-junit  
+         reporter: java-junit 
         
     # - name: Load test report history
     #   uses: actions/checkout@v3
