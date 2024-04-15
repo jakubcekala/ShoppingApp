@@ -1,6 +1,6 @@
-The purpose of this repository is to use Shopping app implemented in https://github.com/mrnirva/ShoppingApp to create a testing framework based on Espresso and Kaspresso/KakaoCup frameworks.
+The purpose of this repository is to use Shopping app implemented in https://github.com/mrnirva/ShoppingApp to create a testing framework based on Espresso and Kaspresso/KakaoCup.
 
-Example of Allure report of executed test cases:
+Example of Allure report for executed test cases:
 
 
 
