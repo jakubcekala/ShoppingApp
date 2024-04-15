@@ -34,12 +34,12 @@ jobs:
       if: always()
       with:
         working-directory: ShoppingApp/
-        api-level: 32
+        api-level: 30
         arch: x86_64
         disable-animations: true
         emulator-options: -accel auto -no-snapshot-save -no-window -gpu auto -noaudio -no-boot-anim -camera-back none
         ram-size: 4096M
-        script: ./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.shopping.app.suites.Regression
+        script: ./gradlew connectedAndroidTest
 
     - name: Upload jUnit report
       if: always()
@@ -56,26 +56,3 @@ jobs:
          path: ShoppingApp/app/build/outputs/androidTest-results/connected/*.xml    # Path to test results
          reporter: java-junit 
         
-    # - name: Load test report history
-    #   uses: actions/checkout@v3
-    #   if: always()
-    #   continue-on-error: true
-    #   with:
-    #     ref: gh-pages
-    #     path: gh-pages
-
-    # - name: Build test report
-    #   uses: simple-elf/allure-report-action@v1.7
-    #   if: always()
-    #   with:
-    #     gh_pages: gh-pages
-    #     allure_history: allure-history
-    #     allure_results: /sdcard/Documents/allure-results
-
-    # - name: Publish test report
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   if: always()
-    #   with:
-    #      github_token: ${{ secrets.GITHUB_TOKEN }}
-    #      publish_branch: gh-pages
-    #      publish_dir: allure-history
